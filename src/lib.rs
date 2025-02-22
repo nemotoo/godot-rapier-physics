@@ -2,30 +2,31 @@
 #![feature(let_chains)]
 #![feature(try_blocks)]
 #[cfg(all(feature = "single", feature = "dim2"))]
-extern crate rapier2d as rapier;
+pub extern crate rapier2d as rapier;
 #[cfg(all(feature = "double", feature = "dim2"))]
-extern crate rapier2d_f64 as rapier;
+pub extern crate rapier2d_f64 as rapier;
 #[cfg(all(feature = "single", feature = "dim3"))]
-extern crate rapier3d as rapier;
+pub extern crate rapier3d as rapier;
 #[cfg(all(feature = "double", feature = "dim3"))]
-extern crate rapier3d_f64 as rapier;
+pub extern crate rapier3d_f64 as rapier;
 #[cfg(all(feature = "single", feature = "dim2"))]
-extern crate salva2d as salva;
+pub extern crate salva2d as salva;
 #[cfg(all(feature = "double", feature = "dim2"))]
-extern crate salva2d_f64 as salva;
+pub extern crate salva2d_f64 as salva;
 #[cfg(all(feature = "single", feature = "dim3"))]
-extern crate salva3d as salva;
+pub extern crate salva3d as salva;
 #[cfg(all(feature = "double", feature = "dim3"))]
-extern crate salva3d_f64 as salva;
-mod bodies;
-mod fluids;
-mod joints;
-mod rapier_wrapper;
-mod servers;
-mod shapes;
-mod spaces;
-mod types;
-use godot::prelude::*;
+pub extern crate salva3d_f64 as salva;
+pub mod bodies;
+pub mod fluids;
+pub mod joints;
+pub mod rapier_wrapper;
+pub mod servers;
+pub mod shapes;
+pub mod spaces;
+pub mod types;
+pub use godot::prelude::*;
+/*
 #[cfg(feature = "dim2")]
 #[derive(GodotClass)]
 #[class(base=Object, init)]
@@ -78,3 +79,4 @@ unsafe impl ExtensionLibrary for RapierPhysics3DExtensionLibrary {
 
     fn on_level_deinit(_level: InitLevel) {}
 }
+ */
